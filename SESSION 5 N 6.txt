@@ -1,0 +1,387 @@
+                                                                   ----------------
+																	 SESSION - 5 
+																   ----------------
+Python Features
+Identifiers
+Reserved words
+Data types:
+-------
+int
+float
+complex
+bool
+str
+bytes
+bytearray
+range
+list
+tuple
+set
+frozenset															   
+dict
+None
+
+
+
+int:
+----
+
+to hold integral values
+whole numbers:123,423,7283
+
+decimal form
+binary form
+octal form
+hexa decimal
+
+x=10
+binary  x=0b10   2
+octal x=0o10  8
+hexadeciaml a=0X10   16
+
+it will provide values in decimal form only
+
+NOTE: 1) RANGE,MAX & SIZE  doesn't support in PYHTON
+      2) IN python everything(all datatypes are implemented as) an object
+	 
+	 
+BASE CONVERSIONS:
+------------------
+bin()
+oct()
+hex()
+
+bin(x) here x can be any type
+
+in Python3 we don't have LONG data type
+----------------------------------------------------------------------------------------------------------------------------------------------
+FLOAT data type:
+----------------
+salary - 23344.53
+diesel - 73.43
+ this are not integral values
+ 
+ f=1223.32
+ f=0x1234.345 it is hexa deciaml
+ f=0o1234.435
+
+0B
+0o
+0X    
+
+this can be only for INT data type only
+--------------------------------------------------------
+example
+
+>>> f=0o1234.435
+  File "<stdin>", line 1
+    f=0o1234.435
+               ^
+SyntaxError: invalid syntax
+>>> f=0o1234.43
+  File "<stdin>", line 1
+    f=0o1234.43
+              ^
+SyntaxError: invalid syntax
+-------------------------------------------------------
+Exponential form
+
+1.2e3==>  1.2*1000
+
+>>> f=1.2e4
+>>> f
+12000.0
+
+this can be allowed only in exponential type
+-----------------------------------------------------------------------------------------------------------------------------------------------
+COMPLEX data type:
+------------------
+
+a+bj
+
+a=Real Part
+b=imaginary Part
+j^2= -1
+
+
+>>> a=10+20j
+>>> a
+(10+20j)
+>>> type(a)
+<class 'complex'>
+>>> y=10.3+2.3j
+>>> y
+(10.3+2.3j)
+>>> type(y)
+<class 'complex'>
+>>> x=10+20i
+  File "<stdin>", line 1
+    x=10+20i
+           ^
+SyntaxError: invalid syntax
+>>> 
+ or 
+>>> x=10+j23
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'j23' is not defined
+
+but it  accepts only a+bj format only
+ In the real part it accepts bin ,hex, octal
+  >>> a=0b111+20j
+>>> a
+(7+20j)
+>>> 
+ but  imaginary must be only decimal
+example:>>> a=10+23j
+>>> b=12+21j
+>>> a+b
+(22+44j)
+
+a+b(add) subtration  mulktiplication is possible 
+>>> a=15+0b111j
+  File "<stdin>", line 1
+    a=15+0b111j
+              ^
+SyntaxError: invalid syntax
+>>> 
+a=10+20j
+a.real
+a.imag
+
+>>> a=10+20j
+>>> a.real
+10.0
+>>> a.imag
+20.0
+>>> if we going to develop mathematical or scientific value  application then we  gonna use it
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+BOOL data type:
+---------------
+The only allowed values are  True and False in Python T n F are captial letters only 
+
+True and False
+
+b='true' then it will treated as string
+
+NOTE:internally this True n False 
+True + True = True 0r error or None (none of this)	
+
+True+ True =>2
+
+>>> True+True
+2
+>>> True+False
+1
+>>>print(True/False)
+1.0 
+as the division operator in Python gives the floating value 
+>>> print(True/False)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ZeroDivisionError: division by zero
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+str data type :-
+---------------
+
+string : any sequence of characters is by default considered as string
+ 
+'durga' or "durga"  acceptable 
+single quotes==>char  in other programming lang only
+double quotes==>String
+triple quotes==>multi line string literals
+
+but char is not other in Python
+s=durga
+
+>>> s
+'duraisimham'
+>>> s='duraisimham"
+  File "<stdin>", line 1
+    s='duraisimham"
+                  ^
+SyntaxError: EOL while scanning string literal
+>>> s="duraisimham"
+>>> s
+'duraisimham'
+>>> s="durga
+  File "<stdin>", line 1
+    s="durga
+           ^
+SyntaxError: EOL while scanning string literal
+
+
+multi line literal string then follow '''
+>>> s='''durga
+... softwarees'''
+>>> s
+'durga\nsoftwarees'
+>>> 
+
+Durga sir "python classes " are very helpful
+>>> s='''Durga sir "python classes " are very helpful'''
+>>> s
+'Durga sir "python classes " are very helpful'
+>>> 
+
+slicing
+-------
+[***slice operator***]
+s="DUrga software"
+s[2:4]
+>>>'rg'
+>>> s='mohameed Farhan'
+>>> s[9:17]
+'Farhan'
+>>> s[10:17]
+'arhan'
+>>> s[23]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: string index out of range
+
+NOTE: In Python positive index(left to right 0 ,1 ,2 ,3)and negative index(right to left i.e -1 -2 -3 -4) is possible
+>>> s='mohameed Farhan'
+>>> s[-5]
+'a'
+>>> s[-6]
+'F'
+>>> s[-23]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: string index out of range
+
+   -5 -4 -3 -2 -1  (right to left index position i.e neagtive)
+    d  u  r  g  a
+	0  1  2  3  4  (left to right index position i.e positive)
+	
+negative index is there for the flexibility purpose
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+																		---------------
+																		  SESSION - 6
+																		---------------
+
+Slice operator:
+---------------
+
+s='durga'
+
+s[begin:end]
+retrurns the substring from begin index to  *end-1 index
+>>> s='durga'
+>>> s[0:3]
+'dur'
+>>> s[1:3]
+'ur'
+>>>s[1:4]
+'urg'
+>>> s[2:4]
+'rg'
+>>> s[1:]
+'urga'
+>>> s[:4]
+'durg'
+>>> s[:]
+'durga'
+>>> s[-4:-2]
+'ur'
+>>> s[1:100]
+'urga'   (index is gng to consider till end of index)
+
+
+s[begin:end:step]
+
+s='durgaosftwaresolutiions'
+>>> s='durgaosftwaresolutions'
+>>> s[1:10]
+'urgaosftw'
+>>> s[1:10:3]
+'uaf'
+>>> s[1:10:2]
+'ugofw'
+>>> s="durga"
+>>> s*10
+'durgadurgadurgadurgadurgadurgadurgadurgadurgadurga'
+>>> s*4
+'durgadurgadurgadurga'
+>>> len(s)
+5
+
+str
+index
+slice
+* repeatiion operator
+len(s)
+
+NOTE: 
+1.int,str,complex,float,bool --->are immutable  and also are fundamental data  types
+2.char==> can be showed by str type only 
+ there is no explicit char data type
+3.long ===> data type is avaliable in PYTHON2
+  PYTHON3 WE HAVE LONG values only by int data type only
+---------------------------------------------------------
+Type Casting [or] Type coersion:(conversion of one data type into another data type )
+------------------------------
+in built conversion functions
+int()
+float()
+bool()
+complex()
+
+--------
+A)int():
+--------
+any value into INT type
+
+1.int(23.45)===>23    float to INT
+2.>>> int(10+20j)===> Type error
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can't convert complex to int
+
+complex can't  be converted to INT
+
+3.int(True)==1
+  int(False)==0
+4.>>> int("10")
+10
+>>> int("10.5")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '10.5'
+>>> int('0b1111')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '0b1111'
+>>> 
+
+---------
+B) FLOAT:
+---------																		
+1.>>> float(100)
+  100.0
+  >>> float(100+20j)
+  Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  TypeError: can't convert complex to float
+  >>> 
+2.>>>float(True)
+  1.0
+  >>>float(False
+  0.0
+  >>>float("10") 
+  >>>10.0
+  >>>float("10.5") 
+  >>>10.5
+  >>> float("ten")
+  Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  ValueError: could not convert string to float: 'ten'  
+  >>> float("0b111")
+  Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  ValueError: could not convert string to float: '0b111'
+  
+  NOTE:1.we can convert all except complex to float
+       2.whenever we are going to convert str type to float, the str must be either integral  or floating value 
+																		

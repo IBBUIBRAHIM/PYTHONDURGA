@@ -1,0 +1,81 @@
+session 1
+
+python  is a general purpose high level programming  language .
+father of python is GUIDO VAN ROSSAM ==>1989 AT NETHERLAND NATIONAL INSITITUTE
+1991  OFFICIAL DOB OF FEB 20 1991
+
+FIRST Language for easy learning 
+--------------------------
+programs can be written easily with less code
+jshell 2017 sept 21  system.out.println for printing hello world. single line
+c,java ===> are Statically typed language
+python ===> Dynamically typed language
+--------------------------
+PYTHON ===>BBC channel (1969 to 1974)
+monty python's flying circus
+Hadoop ===>yellow cap elephant
+
+python is embedded with 
+1)Functional programming from C lang
+2)OOP's concept from C++
+3)Scripting language features from PERL AND SHELL script
+4)Modular programming features from Modula-3
+
+syntax from C and ABC Language
+-----------------------------------
+def f1():print("good evening")
+where we can use python?
+ 1. We can develop desktop applications(eg: calculator)
+ 2. Web applications(Django as web application framework  used in python)
+ 3. Database applications
+ 4. For Networking application
+ 5. For gaming
+ 6. Data Analysis with python
+ 7. Machine Learning
+ 8. AI
+ 9. for IoT applications
+ 10.for mobile application(but not sure)
+ 
+ 
+ which companies use Python?
+ --------------------
+ Google
+ Youtube
+ Dropbox
+ NASA
+ NSE
+                                                                      ------------ 
+                                                                       SESSION - 2
+                                                                      ------------
+Features of python:
+-------------------
+1. Simple and Easy to learn *
+2. Free ware and open source(source code can be seen)
+   (-keywords in java 53
+     keywords in Python 30
+   jython is customized from python for java programs with python)
+3. High level programming language
+4. Python is also paltform independent(write once and Run anywhere(WORA))*
+5. Portability *
+6. Dynamically typed programs ****
+7. Both procedure oriented and  object oriented ****
+8. Interpreted programming language
+9. Extensible(we can use java,c programs,
+               we can improve performance of application,
+			   performance of pyhton programs can be improved by some other programming functionality
+			   non python code can made used by extensible feature) ******
+10.Embedded	(we use python programs in any other programming languages also)******
+11.Extensive library(i.e we can import libraries)*************
+
+
+Limitations of python
+---------------------
+1.performance(as it is interpreted{can see only 1 line} language)  it is not upto the mark
+2.Mobile applications 
+
+
+
+                                                                      
+
+																	  
+																	  

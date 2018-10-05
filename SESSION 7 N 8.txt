@@ -1,0 +1,504 @@
+																					-------------
+																					 SESSION - 7
+																					-------------
+																
+int
+float
+complex===>a+bj
+bool==>True or False
+str===>'durga'																
+------------------
+Type casting or type coersion
+-------------------------------
+int()
+float()
+complex()
+bool()
+str()
+-------------------------------
+int():
+----
+int(10.23)==>10
+int(10+20j)===>TypeError
+>>> int(10+20j)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can't convert complex to int
+
+int(True)===>1
+int(False)===>0
+int("10")====>10
+int("10.5)===TypeError
+>>> int("120.4")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '120.4'
+
+NOTE:if we want to convert str type to integral str value should be int value and base 10
+---------------------------------------------------------------------------------------------------------------------------------------------------
+FLOAT():
+--------
+float function to convert  any other type to float
+float(10)===>10.0
+float(10+6j)===>TypeError
+float(True)==>1.0
+float("10")==>10.0
+flaot("10.5")==>typeError
+float("ten")===>
+>>> float("ten")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: could not convert string to float: 'ten'
+float("0B111")====>
+>>> float("0B122")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: could not convert string to float: '0B122'
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+COMPLEX():
+----------
+Other types of complex type
+
+Form-1:complex(x)==>x+0j
+Form-2:complex(x,y)==>x+yj
+
+
+Form-1:complex(x)==>x+0j
+------------------------
+complex(10)==>10+0j
+>> complex(10)
+(10+0j)
+>>> complex(10.5)
+(10.5+0j)
+>>> complex(True)
+(1+0j)
+>>> complex(False)
+0j
+>>>complex("10")
+(10+0j)
+>>> complex("10.5")
+(10.5+0j)
+>>> complex("ten")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: complex() arg is a malformed string
+>>> complex("0b11")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: complex() arg is a malformed string
+
+complex accepts int float bool bool
+but str must be in base 10 or log e or exponential
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Form-2:complex(x,y)==>x+yj:
+---------------------------
+>>> complex(10,200)
+(10+200j)
+>>> complex(True,False)
+(1+0j)
+>>> complex(10,20.5)
+(10+20.5j)
+>>> complex("10","20.5")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: complex() can't take second arg if first is a string
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Bool():
+-------
+
+
+for int argument:
+-----------------
+bool(0)===>False
+bool(10)===>True
+as because 0 means False , 1 means True
+bool(-10)==>True
+--------------------------------------------------------------
+for Float argument:
+-------------------
+0.0=====>False
+>>> bool(0.1)
+True
+>>> bool(0.0)
+False
+>>>bool(0.01)
+>>>True
+----------------------------------------------------------------
+for complex numbers:
+--------------------
+>>> bool(10+20j)
+True
+>>> bool(10+21j)
+True
+>>> bool(11+21j)
+True
+>>> bool(0+0j)
+False
+>>> 
+-----------------------------------------------------------------
+for Str argument:
+-----------------
+arg is empty string==>'' ====>False
+in other case it is True
+>>> bool('')
+False
+>>> bool('durga')
+True
+>>> bool(' ')
+True
+>>> 
+
+
+int()
+float()
+complex()
+bool()
+-----------------------------------------------------------------
+str()
+
+>>> str(True)
+'True'
+>>> str(10+20j)
+'(10+20j)'
+>>> str(10)
+'10'
+>>> str(1.50)
+'1.5'
+>>> str('True')
+'True'
+-----------------------------------------------------------------
+
+Immutable Vs Fundamental data types:
+------------------------------------
+All fundamental data types are immutable
+
+un changeable object is called immutable
+
+mutable ==>changeable
+immuutable===>unchangeable
+
+x=10
+>>> id(x)
+140166674474528
+>>> y=10
+>>> id(y)
+140166674474528
+>>>
+
+if the same content required repeatedly not recommended to create separate object we can use reusable concept(object reusability)
+
+v1="hyd"
+v2="hyd"
+.
+.
+.
+.
+.
+v1crore="hyd" 
+hyd is the object and v1 v2 ....v1crore is references  i.e one object share for all reference object is accepted 
+that's the reason why python uses the immutable concept as result performance and memory sharing 
+>>> v1="hyd"
+>>> v2="hyd"
+>>> v3="hyd"
+>>> id(v1)
+140166531016272
+>>> id(v2)
+140166531016272
+>>> id(v3)
+140166531016272   i.e address of internal object 
+>>> v3="warangal"
+>>> id(v3)
+140166531042864
+
+
+>>> v1="ravi"
+>>> v2="ravi"
+>>> v3="ravi"
+>>> v4="ravi"
+>>> id(v1)
+140166531016496
+>>> id(v2)
+140166531016496
+>>> id(v3)
+140166531016496
+>>> id(v4)
+140166531016496
+>>> v3="wgl"
+>>> id(v3)
+140166531016440
+
+NOTE:1.Everythingin python is an object
+     2.All fundamentals data types :int float bool complex str are immutable
+	 
+---------------------------------------------------------------------------------------------------------------------------------------
+
+x=10
+y=10
+x is y  -- is operator then it retuns true
+>>> x=10
+>>> y=10
+>>> x is y
+True
+>>> y is x
+True
+>>> y=23
+>>> x is y
+False
+>>> x=True
+>>> y=true
+>>> z=True
+>>> y=True
+>>> x is y
+True
+>>> y is z
+True
+>>> z is x 
+True
+>>> x=256
+>>> y=257
+>>> z=257
+>>> x is y
+False
+>>> y is z
+False
+>>> 
+
+as because of internal change can be done from 0 to 256 characters only.-----reusbale in int case only as these the common range used by the programmer .
+>>> x=12.3
+>>> y=12.3
+>>> x is  y
+False 
+for floating poitn data type reusable concept  is not their
+>>> x=10+20j
+>>> y=10+20j
+>>> x is y
+False
+
+for complex and floating numbers reusable concept is not their
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+																					-------------
+																					  SESSION-8
+																					--------------
+
+Various type casting fucntions we have:
+
+int() from other types to int																					
+float() from other types to float
+complex()
+similarly bool() and str()
+
+-----------------------------------------
+float value===> int value==int()
+bool value====> int value==int()
+int value======>str value===>str()
+complex number===>int value===> complex can't be converted to int types
+complex ===>float ====>complex can't be converted to float types
+complex==>bool(x)
+any type===>str type==>str() function
+
+------------------------------------------
+Fundamental data types vs immutability:
+---------------------------------------
+once we create should not change i.e is called the immutable
+x=10
+y=10
+z=10
+no of objects=1
+no of references=3
+
+sir checking the every value in memory it won't decrease the speed?
+
+it decreases the speed
+
+checking==>1 nano secs
+object creation==1000 nano secs
+memory utilization and performance
+  
+  
+  
+  reusing same object only in the following ranges only:
+---------------------------------------------------------
+int==>0 to 256
+bool====>always 
+str======>always  
+
+---------
+float   |   re usability is not there    
+complex |
+--------
+in the case of float and double always a new object is created reusing object is not there in float and complex
+
+at the time of python interpreter starts:
+------------------------------------------
+from o to 256 integer object swill created at the beginning only
+
+
+a=10
+b=10
+c=10
+run time performance will be improved.
+
+0 to 256 is the commonly used range
+
+
+0 to 256===>fixed
+bool==> True and False
+-----------------------
+ 0 to 1
+ we have  
+ 0.1
+ 0.01
+ 0.11
+ 0.101
+ infinite
+ 
+ 10+20j
+ 0.1+0.2j  same as float only   infinite numbers
+ 
+ 
+ sir there aere infinite string value also
+ ------------------------------------------
+ 
+ s='durga'
+ 10 or 20 or 30
+ ------------------------------------------
+then when did they have defined float and complex types as immutable?
+
+default implmentation they developed at the time of developing software
+------------------------------------------------------------------------
+
+
+
+
+Bytes data type :
+-----------------
+It represent's a group of byte numbers just like an array 
+
+CREATION:
+--------
+>>> x=[10,20,30,40]
+>>> b=bytes(x)
+>>> x
+[10, 20, 30, 40]
+>>> type(b)
+<class 'bytes'>
+>>> b[0]
+10
+>>> b[-1]
+40
+>>> >>> b[0:2]
+b'\n\x14'
+>>> for x in b:
+...    print(x)
+... 
+10
+20
+30
+40
+>>>
+
+1.  in the range 0 to 256 only
+
+
+>>> y=[10,23,256,23465]
+>>> b=bytes(y)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: bytes must be in range(0, 256)
+
+2.  immutable
+
+>>> s=[10,20,30,40]
+>>> b=bytes(s)
+>>> b[0]
+10
+>>> b[0]=120
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'bytes' object does not support item assignment
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+bytearray:
+----------
+
+byte and bytearray are same type
+
+bytearray is mutable 
+
+>>> x=[10,20,149,34]
+>>> b[0]=258
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: byte must be in range(0, 256) 
+
+
+>>> x=[10,20,49,34]
+>>> b=bytearray(x)
+>>> b[2]
+49
+>>> type(b)
+<class 'bytearray'>
+>>> b[2]=120
+
+>>> for i in b:
+...    print(i)
+... 
+10
+20
+120
+34
+>>> 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+List data type:  a group of  values as a single entity where insertion order is preserved and duplicates are allowed
+--------------
+
+in python list of values are printed or represented square braces[]
+>>> l=[]
+>>> type(l)
+<class 'list'>
+
+>>> l.append(10)
+>>> l.append(22)
+>>> l.append(10)
+>>> l.append(34)
+>>> print(l)
+[10, 22, 10, 34]
+>>> l.append('durga')
+>>> print(l)
+[10, 22, 10, 34, 'durga']
+>>> l.append(None)
+>>> print(l)
+[10, 22, 10, 34, 'durga', None]
+>>>l[0]
+10
+>>> l[-3]
+34
+>>> l[1:5]
+[22, 10, 34, 'durga']
+>>> 
+>>> l.remove(10)
+>>> print(l)
+[22, 10, 34, 'durga', None]
+>>>
+>>> l[1:6]
+[10, 34, 'durga', None]
+>>> l[-1:6]
+[None]
+>>> l[-1:-5]
+[]
+>>> l[-5:-3]
+[22, 10]
+>>> 
+
+order is followed
+duplictes are allowed
+heterogeneous
+growable
+values should be enclosed with[]
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------

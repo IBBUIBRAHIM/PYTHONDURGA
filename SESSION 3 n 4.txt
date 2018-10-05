@@ -1,0 +1,218 @@
+                                                                      -------------
+																	   SESSION - 3
+																	  -------------
+																	  
+Myth:
+------>      Python not suitable for large scale enterprise applications		
+
+Flavours of Python:
+-------------------
+1. CPython
+2. Jython or JPyhton(java applications)
+3. IronPython(to work with C# and dot net platfrom)
+4. Pypy(internal python --good at performance)====>PVM(Python virtual machine) ===>"JIT(just in time) compiler 
+5. RubyPython(for Ruby application)															  
+6. AnacondaPython(BIG data) for handling huge or  large data performing 
+7. Stackless(Python for concurrency)
+
+Python versions:
+---------------
+Python 1.0 introduced in 1994
+python 2.0 in oct 2000
+python 3.0 in dec 2008
+
+Python 3.6.3 ==>2016
+
+(*****************Any new version should provide support for old version programs.
+in python  no such support for backward versions of python(3 does not support 2)
+Python3  <---->Python2      --->by 2020 support for python2 will be not their****************)
+print"Helloworld" valid in python-2 but invalid in pyhton3
+so for pyhton3 we need to write as print("hello")
+
+long data type  ===> pyhton-2 but not in python-3
+------------------------------------------------
+
+
+******IDENTIFIERS*****
+----------------------
+Identifier
+
+
+x is name of varibale n x is identifer
+x=10
+def f1(): 
+pass
+ -- f1 is function
+class Test(Exception):
+
+identifer maybe variable name,class name or method name
+
+Rules to define identifiers in Python:
+--------------------------------------
+1. alphabets symbols(both upper and lower)
+   digits(0 to 9)
+   underscore(_)
+   eg:
+      cash=10
+	  ca$h=10(invalid in python)
+    
+2. idetifier should not start with digit
+   total123=10
+   123total=10(it is invalid) as identifier should not start with digit
+   
+3. Identifiers are case-sensitive
+   total=10
+   TOTAL=20
+   
+4. keywords
+   x=10  valid
+   def=20 invalid
+   
+5. no length limit for python identifers
+   32 or 64
+   64 or 128
+   128 or 256
+   s
+$ sign is not valid in python as it is internally implemented
+
+
+   123total     invalid
+   total123      valid
+   java2share    valid
+   ca$h         invalid
+   _abc_abc      valid
+   def n if  is keywords
+   
+   if  identifer starts with _(underscore) then it is private  -==>
+   _ _(it is strongly private)
+   __main__(it is language specific variable) defined by python itself
+   
+ 
+ 
+                                                                  -------------
+																   SESSION - 4
+																  -------------
+																  
+RULES OF IDENTIFIER:
+--------------------
+1. atoz, AtoZ, 0-9, _																  
+2. Starts with digit
+3. case sensitive
+4. Reserved words as identifers
+5. No length limit 
+
+
+_x==> private
+__x==>strongly private
+__x__ python language defined name
+
+__name__
+__add__
+
+
+
+RESERVED WORDS:
+----------------
+33 reserved words
+
+
+True,False,None
+and,or,not,is
+if,else,elif(else-if)
+while,for,break,continue,return,in,yield
+try,except,finally,raise,assert
+import,from,as,class,def-(methods n  constructors),pass,global,nonlocal,lambda(anonymous,del,with(files)
+
+continue(skip for the loops concept iteration)
+pass(anywhere to do anything)
+
+raise(==> throw keyword in java)
+assert for debuggging purposes
+import keyword
+keyword.kwlist
+[and', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'exec', 'finally', 'for', 'from',
+ 'global', 'if', 'import', 'in', 'is', 'lambda', 'not', 'or', 'pass', 'print', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+NOTE:
+1. only it contains symbols
+2. except True False None all are lower cases 
+
+**************************************************************************************************************************)))))))))))))))))))))))))))
+22-67549522/9388
+
+DATATYPES:
+----------
+
+(14 buit in Datatypes)
+int
+float
+complex====>10+2j
+bool
+str
+bytes
+bytearray
+range
+list
+tuple
+set
+frozenset                      (  int float complex bool are not objetcs)
+dict
+None
+ 
+ Note:in python every thing is object internally
+
+Python provides in-built  functions
+print()
+type()
+
+
+1. int;
+--------
+integral values
+10 20 30
+
+
+a=10
+type(a)
+
+long ==> python3 not available
+
+we can represent int values
+1.Decimal
+2.Binary
+3.Hexa decimal
+4.octal
+
+
+1.Decimal(base-10)
+  0 to 9
+  
+2.Binary(base-2)
+   0 and 1
+   a=1111  (by default it will consider it decimal only)
+   
+   
+   a=0b1111
+   a=0B1111
+   
+3.Octal(Base-8)
+  0 to 7
+  a=0o777
+  
+4.Hexa Decimal(Base-16)
+
+ 0to9,atof(anycase),A to F
+ 
+ 0x or 0X
+ 
+ 0xbeef
+ 0xead
+ 0xcar  invalid as it takes only a to f
+ 
+ 
+ a=10
+ b=0o10
+ c=0b10
+ d=0x10
+ 
+ but we get out put only in decimal form 

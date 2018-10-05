@@ -1,0 +1,234 @@
+																	--------------
+																	 SESSION - 15
+																	--------------
+																	
+																	
+How to read multiple values from the keyboard in a single line:
+----------------------------------------------------------------
+input('Enter some data:').split()
+'10 20 30'
+['10','20','30'] ======>list of string values
+
+s=[int(x) for x in input('Enter 2 numbers:').split()]
+          ------------------------------------------
+ default it willbe in the string form only.
+ so we are using the int(x) to convert into the integer.
+ and placing values in list only
+print(s)																	
+						
+>>> s=[int(x) for x in input('Enter 2 numbers:').split()]
+Enter 2 numbers:10
+>>> s=[int(x) for x in input('Enter 2 numbers:').split()]
+Enter 2 numbers:102030
+>>> s
+[102030]
+>>> s=[int(x) for x in input('Enter 2 numbers:').split()]
+Enter 2 numbers:10 20 
+>>> s
+[10, 20]
+>>> a,b=[int(x) for x in input('Enter 2 numbers:').split()]
+Enter 2 numbers:10 20
+>>> print('the sum:',a+b)
+the sum: 30						
+
+
+
+
+To read 3 float values from the keyboard with , seperator and print the sum
+---------------------------------------------------------------------------
+
+
+
+
+a,,b,c=[float(x) for x in input('Enter 3 numbers').split(',')]
+
+
+['10.5','20.4','23.2']
+
+>>> a,,b,c=[float(x) for x in input('Enter 3 numbers').split(',')]
+  File "<stdin>", line 1
+    a,,b,c=[float(x) for x in input('Enter 3 numbers').split(',')]
+      ^
+SyntaxError: invalid syntax
+>>> a,b,c=[float(x) for x in input('Enter 3 numbers').split(',')]
+Enter 3 numbers10 20 30 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 1, in <listcomp>
+ValueError: could not convert string to float: '10 20 30 '
+>>> a,b,c=[float(x) for x in input('Enter 3 numbers').split(',')]
+Enter 3 numbers10.5,20.5,45.2
+>>> print(a,b,c)
+10.5 20.5 45.2
+>>> print('the sum is:',a+b+c)
+the sum is: 76.2
+the number of  varibles = number of values then it is called the unpacking
+
+
+
+
+>>> x=int(float(bool(input('enter number:'))))
+enter number:10
+>>> x
+1
+>>> x=int(float(bool(input('enter number:'))))
+enter number:
+>>> x
+0
+
+x=int(float(bool(input('enter number:'))))
+            -------------------------------    /it takes true as the string is non empty
+      -------------------------------------     / it takes as 1.0*true	
+  ------------------------------------------     / it takes as 1*1.0*true
+so value is 1  
+				 
+				 
+				 
+				 
+				 
+3--topic
+
+[]=[float(x) for x in input('Enter 3 numbers').split(',')]	
+
+x=input('Enter some data:')		
+
+eval()  when u want the data and data type to be printed ,we have to use eval function
+-----	
+
+x=eval('Enter some data') 
+
+>>> x=eval(input('Enter data:'))
+Enter data:10.5
+>>> type(x)
+<class 'float'>
+>>> x=eval(input('Enter data:'))
+Enter data:10
+>>> type(x)
+<class 'int'>
+>>> 
+>>> x=eval(input('Enter data:'))
+Enter data:rajakumarudu
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<string>", line 1, in <module>
+NameError: name 'rajakumarudu' is not defined
+
+>>> x=eval(input('Enter data:'))
+Enter data:'Rajakumarudu'
+>>> type(x)
+<class 'str'>
+
+
+
+>>> x=eval(input('Enter data:'))
+Enter data:[10,20,30]
+>>> type(x)
+<class 'list'>
+>>> x=eval(input('Enter data:'))
+Enter data:(10,20,30)
+>>> type(x)
+<class 'tuple'>
+>>> x=eval(input('Enter data:'))
+Enter data:{10,20,30}
+>>> type(x)
+<class 'set'>
+>>> x=eval(input('Enter data:'))
+Enter data:10+20+30
+>>> x
+60
+>>> x=eval(input('Enter data:'))
+Enter data:10*20/8*4
+>>> x
+100.0
+  
+command line arguments:
+-----------------------
+
+py test.py abc.txt xyz.txt output.txt
+
+generalized program
+based on our provided argumnets the functionality will be defined 
+
+argv(argument values) -- aspecial variable 
+argv is a List  which is avaliable in SYS module
+
+
+>>> from sys import argv
+>>> print(argv)
+['']
+>>> print(type(argv))
+<class 'list'>
+>>> 
+
+
+py test.py 10 20 30
+['10','20','30']  here it contains 4 values but we see 3 only the other 4th value is name of the file
+it is going to provide the data in the string form only
+
+-bash-3.2$ python ev.py 10 20 30
+('the number of command line arguments:', 4)
+('the listof  command line arguments:', ['ev.py', '10', '20', '30'])
+the command line arguments one by one:
+ev.py
+10
+20
+30
+
+
+from sys import argv
+print('the number of command line arguments:',len(argv))
+print('the listof  command line arguments:',(argv))
+print('the command line arguments one by one:')
+for x in argv:
+   print(x)
+
+   
+   
+   
+   
+   
+																	--------------
+																	 SESSION - 16
+																	--------------
+																	
+input('Enter some thing:')
+
+The return type of input() function is always string.
+by using type casting funcitons or by using eval() function														.
+
+
+Command Line Argument
+---------------------
+The main objective of cmd line arguments is to customize our program
+eg:python ev.py 10 20 30  
+
+with in the program we want to access command line argument we should use argv is always variable
+
+argv ---->list of cmd line arguments is present in the sys module 
+
+
+from sys import argv
+print(argv[1:])    // how to get values without file name
+
+-bash-3.2$ python ar.py 10 20 30
+['10', '20', '30']
+
+
+write a program to find sum of given numbers where numbers as cmd line args
+
+
+from sys import argv
+sum=0
+for x in argv[1:] :   // all lines in the command line argument is considered as string type
+   sum=sum+x
+   print('the sum is:', sum)
+error:
+-bash-3.2$ python sumar.py 10 20 30
+Traceback (most recent call last):
+  File "sumar.py", line 4, in <module>
+    sum=sum+x
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+																	
+
+																	

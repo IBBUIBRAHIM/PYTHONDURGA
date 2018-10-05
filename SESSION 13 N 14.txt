@@ -1,0 +1,532 @@
+																	---------------
+																	  SESSION - 13
+																	---------------
+																	
+ASSIGNMENT OPERATORs:
+--------------------
+x=10
+
+compound operators:
+-------------------
+x+=10 ==>x=x+10
++=
+-=
+*=
+/=
+%=
+//=
+**=
+&=p[
+|=
+^=
+>>=
+<<=
+
+>>> a
+10
+>>> a==10
+True
+>>> a
+10
+>>> a==9
+False
+
+
+++x and [x++ there is no increment or decrement operation]
+pre-increment and post-increment
+
+--x and x--
+pre-decrement and post-decrement
+
+
+>>> x=10
+>>> y=++x
+>>> print(y)
+10
+>>> a=12
+>>> b=--x
+>>> print(b)
+10
+>>> a=14
+>>> b=x--
+  File "<stdin>", line 1
+    b=x--
+        ^
+SyntaxError: invalid syntax
+
+>>> x=12
+>>> y=x--2
+>>> y
+14 as -- becomes +
+>>> x=12
+>>> y=x--2
+>>> y
+14
+>>> x=12
+>>> y=x-+2
+>>> y
+10
+>>> y=x+-2
+>>> y
+10
+>>> y=x++2
+>>> y
+14
+>>> 
+
+Ternary operator:
+-----------------
+in JAVA (?:)  is ternary operator
+
+
+x = a
+x=(10<20)?30:40  ---in java or c 
+print(x)
+
+
+
+
+x = 30 if 10<20 else 40
+     1     2          3    -----operands
+	 
+x =  a if condition else  b
+
+>>> x = 30 if x<20 else 40
+>>> x
+40
+>>> x = 30 if x>20 else 40
+>>> x
+30
+
+>>> a=30 if 10<20 else 40
+>>> a
+30
+>>> a=30 if 10>20 else 40
+>>> a
+40
+
+a=40
+b=30
+min = a if a<b else b
+print('the min vaue is :' min)
+
+
+
+NESTING of  ternary operator:
+-----------------------------
+a=12
+b=30
+c=34
+max= a if a>b and a>c else b if b>c else c
+print("the max value is:",max)
+
+
+a=int(input('Enter first no:'))
+b=int(input('Enter second no:'))
+s1='Both Are Equal'
+s2='First Number is Greater Than Second Number'
+s3='First Number is Less Than Second Number'
+print(s1 if a == b else s2 if a>b else s3)
+
+bash-3.2$ python str.py
+Enter first no:10
+Enter second no:12
+First Number is Less Than Second Number
+-bash-3.2$ python str.py
+Enter first no:15
+Enter second no:14
+First Number is Greater Than Second Number
+-bash-3.2$ python str.py
+Enter first no:10
+Enter second no:10
+Both Are Equal
+
+--------------------------------------------------------------------------
+a=int(input('Enter first no:'))
+b=int(input('Enter second no:'))
+print('Both Are Equal' if a == b else 'First Number is Greater Than Second Number' if a>b else 'First Number is Less Than Second Number')
+
+
+-bash-3.2$ vim purestr.py
+-bash-3.2$ chmod 777 purestr.py
+-bash-3.2$ python purestr.py
+Enter first no:41
+Enter second no:26
+First Number is Greater Than Second Number
+-bash-3.2$ python purestr.py
+Enter first no:45
+Enter second no:47
+First Number is Less Than Second Number
+-bash-3.2$ python purestr.py
+Enter first no:45
+Enter second no:45
+Both Are Equal
+
+
+
+
+Special operators:
+------------------
+1. Identity operators
+2. Membership operators 
+
+
+1.identity operator:
+-------------------
+a is b
+a is not b
+
+
+a=10
+b=10
+print(id(a))
+print(id(b))
+
+
+>>> a=10
+>>> b=10
+>>> print(id(a))
+139942270002720
+>>> print(id(b))
+139942270002720
+>>> print(a is b)
+True
+>>> b=12
+>>> print(id(b))
+139942270002784
+>>> print(a is b)
+False
+
+
+
+>>> a=['durga','sre','saee']
+>>> b=['durga','sre','saee']
+>>> id(a)
+139942109310088
+>>> id(b)
+139942109774728
+>>> print(a is b)   // it is for the address comp  	arision
+False  here  it sees the process id.
+>>> print(a==b)
+True  here it sees the content
+
+as the collection object is takes different values 
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+																			---------------
+																			 SESSION - 14
+																			---------------
+Identity operator:
+-----------------
+
+is
+is not
+
+a is b																			
+
+== operator and is operator
+
+== is meant for content comaparision
+is operator is meant for address  comparisions 
+
+
+>>> a=[10,20,30]
+>>> id(a)
+140363694656136
+>>> b=[10,20,30]
+>>> id(b)
+140363694627208
+>>> print(a==b)
+True
+>>> print(a is b)
+False
+>>>
+
+>>> a=["aa","bb","cc"]
+>>> b=["aa","bb","cc"]
+>>> print("aa" in a is b or a == b and a is b) 
+False   ///                   TRUE AND  <--FALSE) <---left to right( AS AND  OPERATOR IS HAVING HIGHEST PRECEDENCE)
+        		TRUE     is b or -----FALSE------------													
+				
+				True is boolean and b is both are point to same object or not///so it is False
+				
+				
+				False or False===>False
+>>>False				
+
+
+Membership operator:
+--------------------
+
+l=[10,20,30,40]
+10 in l
+>>>l=[10,20,30,40]
+>>>10 in l
+True
+>>>50 in l
+False
+>>>
+
+in 
+
+not in 
+
+
+in --->operator  returns true if the specified member present  in  the sequence or not
+  
+if X in sequence returns True , if not returns False
+
+
+s='hello python is there '
+print(' ' in s)  
+
+>>> s='druga'
+>>> print('r' in s)
+True
+>>> print('z' in s)
+False
+>>> s='hello python is there '
+>>> print(' ' in s)  
+True  //as space is their
+
+Operator Precedence:
+---------------------
+10+20*3=70
+
+()   ----------------------------------->Paraenthesis
+**   ----------------------------------->Power Operator
+~,-  ----------------------------------->
+*,/,//,%   ----------------------------->
++,-        ----------------------------->
+<<,>>      ----------------------------->
+&          ----------------------------->
+^          ----------------------------->
+|          ----------------------------->
+>,>=,<,<=,==,!=  ----------------------->
+= ,+=,-=,*=      ----------------------->
+is , is not      ----------------------->
+in ,not in       ----------------------->
+not              ----------------------->
+and              ----------------------->
+or               ----------------------->
+
+
+
+
+
+a=30
+b=20
+c=10
+d=5
+print((a+b)*c/d)  50*2
+print((a+b)*(c/d))
+print(a+(b*c)/d)
+
+>>> a=3
+>>> b=2
+>>> c=8
+>>> d=2
+>>> print((a+b)*c/d)
+20.0
+>>> print((a+b)*(c/d))
+20.0
+>>> print(a+(b*c)/d)
+11.0
+
+>>> a=30
+>>> b=20
+>>> c=10
+>>> d=5
+>>> print((a+b)*c/d)
+100.0
+>>> print((a+b)*(c/d))
+100.0
+>>> print(a+(b*c)/d)
+70.0
+>>> print((a+b)*c//d)   ---------
+100
+>>> print((a+b)*(c//d)) ---------  floor division( if we want integer value we can take it)
+100
+>>> print(a+(b*c)//d)   ----------
+70
+
+
+
+
+MATH MODULE:  math module contains several functions and variables which can beused for mathematical operations.
+------------
+MODULE: Any python file which contains several functions,classes,variables and normal codes is considered as module.
+-------
+  A group of moudles is called as the PACKAGE.
+  A group of packages is called as the LIBRARY.
+  
+import math
+print(math.sqrt(10))
+
+
+
+>>> import math
+>>> print(math.sqrt(10))
+3.1622776601683795
+>>> print(math.sqrt(25))
+5.0
+>>> import math
+>>> dir(math)
+
+['__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 
+  'copysign', 'cos', 'cosh', 'degrees', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma', 'gcd',
+  'hypot', 'inf', 'isclose', 'isfinite', 'isinf', 'isnan', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'log2', 'modf', 'nan', 'pi', 'pow', 'radians',
+  'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'tau', 'trunc']
+  
+  
+  >>> print(dir())
+['__annotations__', '__builtins__', '__cached__', '__doc__', '__loader__', '__name__', '__package__', '__s
+pec__', 'a', 'b', 'c', 'd', 'l', 'math', 'readline', 'rlcompleter', 's']
+
+
+import math as m
+print(m.sqrt(30))
+>>> import math as m
+>>> print(m.sqrt(30))
+5.477225575051661
+
+
+import math
+import math as m
+form math import sqrt
+form math import sqrt,pi
+form math import sqrt as s,pi as p 
+
+
+
+from math import pi
+r=int(input("enter radius:"))
+print("Area of circle is :",pi*r**2)
+print("Area of circle is :",pi*r*r)
+ 
+ 
+ enter radius:45
+('Area of circle is :', 6361.7251235193307)
+('Area of circle is :', 6361.7251235193316)
+
+ceil()
+floor()
+pow(x,y)
+factorial()
+gcd()
+sin()
+cos()
+..............
+
+CONSTANTS:
+ pi===>3.14
+ e==>2.71
+ inf===>infinity
+ nan==>not a number
+ ...
+ 
+ 
+ 
+ Input and output statements:
+ ----------------------------
+ Read data from the keyboard i.ec dynamic data at run time:
+ ----------------------------------------------------------
+ python-2
+ ---------
+ x=raw_input("enter some number")  ---> is always treated as string type only
+   we required to use typecasting functions
+ y=input("enter some number")
+ not consider as str type what every type provided
+  we are not required type casting
+ 
+python-3
+-------- 
+
+raw_input is not their,we have only input
+
+x=input("Enter  some number:")
+
+here input of pyhton-3 function works as the raw_input of python-2
+
+so we required type casting 
+
+Type:-1
+--------
+>>> x=int((input("Enter 1 number:"))
+Enter 1 number:10
+>>> y=int(input("Enter 2 number:"))
+Enter 2 number:52
+>>> print(x+y)
+1052
+>>> i=int(x)
+>>> j=int(y)
+>>> print(i+j)
+62
+
+eg:2  
+
+eno=int(input('Enter Employee number:'))
+ename=input('Enter Employee name:')
+esal=float(input('Enter Employee salary:'))
+eaddr=input('Enter Employee Address:')
+married=bool(input('employee married[True|False]:'))
+/ if input is empty string it is considered as False,if the input string is non-empty then it is considered as the True
+print('Please confirm the details')
+print('Employee number:',eno)
+print('Employee name:',ename)
+print('Employee salary:',esal)
+print('Employee address:',eaddr)
+employee married[True|False]:True
+>>> married
+True
+output:
+--------
+>>> eno=int(input('Enter Employee number:'))
+Enter Employee number:124
+>>> ename=input('Enter Employee name:')
+Enter Employee name:Ibrahim
+>>> esal=float(input('Enter Employee salary:'))
+Enter Employee salary:145237
+>>> eaddr=input('Enter Employee Address:')
+Enter Employee Address:kurnool
+>>> print('Please confirm the details')
+Please confirm the details
+>>> print('Employee number:',eno)
+Employee number: 124
+>>> print('Employee name:',ename)
+Employee name: Ibrahim
+>>> print('Employee salary:',esal)
+Employee salary: 145237.0
+>>> print('Employee address:',eaddr)
+Employee address: kurnool
+>>>
+
+
+
+
+Type:-2
+-------
+>>> x=int(input("Enter 1 number:"))
+Enter 1 number:30
+>>> y=int(input("Enter 2 number:"))
+Enter 2 number:87s
+>>> print(x+y)
+117
+
+Type:-3
+-------
+print("the sum is:",int(input("Enter 1 number:"))+int(input("Enter 2 number:")))
+>>> print("the sum is:",int(input("Enter 1 number:"))+int(input("Enter 2 number:")))
+Enter 1 number:10
+Enter 2 number:30
+the sum is: 40
+>>> print("the multiply is:",int(input("Enter 1 number:"))*int(input("Enter 2 number:")))
+Enter 1 number:52
+Enter 2 number:47
+the multiply is: 2444
+
+
+
+

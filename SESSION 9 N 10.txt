@@ -1,0 +1,673 @@
+																					--------------
+																					 SESSION - 9
+																					--------------
+																					
+INT
+FLOAT
+COMPLEX
+BOOL
+STR
+
+-----------
+Type Casting
+------------
+bytes: just like array
+------
+x=[10,20,30 ,40]
+b=bytes(x)
+allowed ranhge is 0 to 256
+immutable
+
+bytearray:
+---------
+exactly same as bytes data type
+
+x=[10,20,30 ,40]
+b=bytearray(x)
+b[2]=123
+
+range o to 256
+mutable
+
+bytes====>binary data like images ,audio,wave mp3,video files we can use byte data format
+
+list data type:
+---------------
+Insertion order  must be preserved 
+Duplicates are allowed
+Heterogeneous objects allowed
+Growable in nature
+* repetition is allowed
+[10,20,30,40]  square braces
+
+in programming most used data type is list
+
+it is allowed to represents in INDEX
+
+index can be either +ve or  -ve
++ve left to right
+-ve right to left
+
+ *(repetition) operator applicable any where
+>>> a=[10,'durga',True]
+>>> a1=a*2
+>>> print(a1)
+[10, 'durga', True, 10, 'durga', True]
+>>> type(a1)
+<class 'list'>
+
+to use * operator first argument as number and second argument must be list .
+
+but i want immutability we should go for tuple concept:
+
+
+TUPLE data type:
+----------------
+tuple and list are same
+tuple is immutable where as list is mutable
+l=[10,20,30,49]
+t=(10,20,33,12,32)
+
+>>> t=(12,32,42)
+>>> t
+(12, 32, 42)
+>>> t=(12,32,423)
+>>> t
+(12, 32, 423)
+>>> type(t)
+<class 'tuple'>
+>>> t=(12,32,423,"durga",'soft',231434)
+>>> t
+(12, 32, 423, 'durga', 'soft', 231434)
+>>> t[0]
+12
+>>> t[0:5]
+(12, 32, 423, 'durga', 'soft')
+>>> t[0]=100
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+
+as tuple is immutable 
+>>> t1=t*2
+>>> t1
+(12, 32, 423, 'durga', 'soft', 231434, 12, 32, 423, 'durga', 'soft', 231434)
+
+
+(10,20,[2,3])
+  1  2    3
+  1 n 2 are tuple element
+  3 is list element
+  
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+RANGE data type:
+----------------
+1.Range represents a sequence of values
+2.Immutable 
+
+Form-1 : range(10)  -- it represents values from 0 to 9
+         range(end)-- it represnets values  from 0 to (end-1)
+		 
+		
+>>> r=range(10)
+>>> type(r)
+<class 'range'>
+>>> r
+range(0, 10)
+range is data type n also function
+>>> for i in r : print(i)
+... 
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+>>> r[4]
+4
+>>> r[0:3]
+range(0, 3)
+>>>>>> r[0]=777
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'range' object does not support item assignment
+
+range(100)
+
+ we want 10 to 30 then we represent
+         
+Form-2:	range(10,30)
+    to reprsent numbers from 10 to 29
+	
+	
+Form-3:range(10,50,5)
+
+>>> for i in range(10,20,4): print(i)
+... 
+10
+14
+18
+>>>>>> for i in range(10,40,4): print(i)
+... 
+10
+14
+18
+22
+26
+30
+34
+38
+>>>
+range(50)        ----0 to 49
+range(10,50)     ----10 to 49
+range(10,30,2)  ------10 to 29 incerement by 2
+>>> for i in range(10,30,2): print(i)
+... 
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+>>> range(10.5,23.4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'float' object cannot be interpreted as an integer
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SET:  if we don't want duplicate and also no order then we can go for SET 
+----
+
+list and set:
+-------------
+In list  duplicates are allowed while in set no duplicates
+in LISt we can have order or insertion order type while set doesn't follow order
+List []
+Set {}
+
+
+s={10,20,30,10,20,30}
+
+>>> s={10,20,30,10,20,30}
+>>> s
+{10, 20, 30}
+even when we try to add duplicates we get added but it represent's non-duplicate only internally.
+>>> s[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'set' object does not support indexing
+
+>>> s[1:]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'set' object is not subscriptable
+ |
+slicing and indexing are not supported in SET data type
+set is represented in {}
+
+insertion order  ----not possible
+duplicates       ---- not possible
+heterogeneous    -----possible
+index            ----- not possible
+slicing 		------ not possbile
+Muatble		------ possible
+
+>>> s.add('durga')
+>>> s
+{10, 20, 30, 'durga'}
+>>> s.remove(20)
+>>> s
+{10, 30, 'durga'}
+Append is applicable in LIST but not in SET
+add n remove only we can use in SET.
+
+>>> s=set()
+>>> for i in range(10):
+...    s.add(i)
+...    print(i)
+... 
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+ >>> s={"dira","rajha"}
+>>> s
+{'dira', 'rajha'}
+>>> s={"dira","rajha"}
+>>> s
+{'dira', 'rajha'}
+>>> s={"dira","rajha","asas"}
+>>> s
+{'dira', 'asas', 'rajha'}
+>>> s=("dira","rajha","asas")
+>>> s
+('dira', 'rajha', 'asas')
+>>> 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+bytes is immuatble
+bytearray is mutable
+
+list is mutable
+tuple is immutable
+
+set  is mutable
+frozenset is immuatble
+
+frozenset is similar to SET
+
+frozenset data type:
+--------------------
+>>> s={10,20,30,40,50,}
+>>> fs=frozenset(s)
+>>> type(fs)
+<class 'frozenset'>
+>>>fs
+frozenset({50, 20, 40, 10, 30})
+order is not maintained
+>>> fs.add(50)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'frozenset' object has no attribute 'add'
+>>> fs.remove(50)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'frozenset' object has no attribute 'remove'
+
+can't be add n can't be removed
+ 
+where can we use  frozenset?
+
+when we want a group of unique values and no one want to change content of the values  ,then we can use FROZENSET
+
+
+dict: dict always talks about group of key values
+-----
+dictionary
+
+
+words:==>meanings
+key-->value
+
+list,tuple,set,frozenset,range,bytes,bytearray===> this are applicable only for the individual objects
+
+
+key ---value pairs
+
+rollno-->name
+word-->meaning
+mobilenumber-->name
+
+
+
+[]
+()
+{}
+{} for dict also smame
+
+d={100:'durga',200:'shiva',300:'ravi'}    --->this is  dictionary
+>>> d={100:'durga',200:'shiva',300:'ravi'}    
+>>> d
+{100: 'durga', 200: 'shiva', 300: 'ravi'}
+>>> type(d)
+<class 'dict'>>>> d={100:'durga',200:'shiva',300:'durga'}    
+>>> d
+{100: 'durga', 200: 'shiva', 300: 'durga'}
+>>> values can be duplicated
+key can be any type of object ,value can be any type of object
+
+{} by default it is treated as empty  dictionary only
+
+s=set()  for creating empty set
+s={} this is dictionary---is default used one
+>>> d1={}
+>>> 
+>>> type(d1)
+<class 'dict'>
+>>> s=set()
+>>> type(s)
+<class 'set'>
+>>> d1[100]='sunny'
+>>> d1
+{100: 'sunny'}
+>>> d1[200]='bunny'
+>>> d1
+{100: 'sunny', 200: 'bunny'}
+>>> d1[100]='chinny'
+>>> d1
+{100: 'chinny', 200: 'bunny'}
+>>> old value sunny is replaced with new value chinny
+
+>>> d1[300]='chinny'
+>>> d1
+{100: 'chinny', 200: 'bunny', 300: 'chinny'}
+dictionary is mutable
+duplicates are not allowed
+but values can be duplicated
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+																				---------------
+																				 SESSION - 10
+																				---------------
+
+Dictionary:
+-----------
+key-value pairs
+
+d={100:"duraga",200:"raja"}
+
+dict and SET we use {} braces
+list===>[]
+tuple==>()
+
+fundamental data types:
+------------------------
+1.	int,
+	float,
+	bool,
+	complex,
+	str
+
+2.     bytes      and    bytearray 
+		|||               |||
+	  immuatble         mutable
+
+
+to represent binary data like images,video files and audio files
+
+
+3.LONG data type:  available only python2
+					but not  in python3
+
+4.ch='a'  in general  is char data type in other programming langauages
+           but in python we use str only
+  "-" '-' '''-'''
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1.int:
+------
+		To represent whole numbers
+		integral numbers
+		Immutable 
+		
+		
+2.Float:
+--------
+        To represent number with decimal point eg:54.32,345.54
+		Immutable
+		f=123.45
+		type(f)
+		
+3.complex:
+----------
+		a+bj a is real part number, b real number and j as imaginary
+		c=10.4+23j
+		type(c)
+		immutable
+		
+4.bool():
+--------		
+		True and False
+		 1         0
+		 
+		 True+True====>1+1 =2
+		 True+False===>1+0 = 1
+		 b=True
+		 type(b)
+		 immutable
+		 
+5.str:
+------
+		the commonly used data type is str only
+		
+		voter Registration Application(Form):
+		--------------------------------------
+		Name:  				str
+		Father name: 		str
+		Mother name:  		str
+		DOB:  				str or int or date
+		age: 				str
+		Gender: 			str
+		Email: 				str
+		Address:  			str
+		 H.no:  			str
+		 Street: 			str
+		 City:			    str
+		 State  	   		str	
+		 
+		 Identification no.1: str
+		 identification no.2: str
+		 Aadhar No: int
+		
+		main(String[] args){}
+		
+		A sequence of characters
+		single
+		double
+		triple
+		
+		s='durga'
+		s="durga"
+		s='''durga      main use is to define multi-line string only
+		     soft'''
+		
+		
+		this is immutable.
+		
+		
+		
+bytes:
+------
+
+0 to 256 range
+
+l=[10,20,30,46,]
+b=bytes(l)
+b[0]
+10
+b[3]
+46
+b[0]=100
+item wise assignment is not possible  
+as it is  IMMUTABLE
+		
+Bytearray:
+-----------
+0 to 256
+but it is mutable i.e we can append values 
+
+we can use in binary data then we use the bytearray data type		
+
+
+8.range:
+--------
+	 To represent range of values 0 to 9
+	 range(10)===>(0,9) as it takes (end-1) for the last value
+	 range(10,30)====>(10 to 29) we can get values from 10 to 29
+	 range(10,60,5)===>(10,15,20,25,30,35,40,45,50,55)    here  10 is first value 60 is last(end-1) value and 5 is step value as it gets increment by 5.
+	 range data type is immutable as once we create we could not change value
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+List:
+-----	order is always preserved
+		heterogeneous object
+		duplicates
+		growable
+        []
+		mutable
+		l=[10,20,30,40]		
+		type(l)
+		
+		l[0]=777
+		
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Tuple: all properties from LIST except we want IMMUTABLE we go for TUPLE	 
+------
+t=(10,20,30,40)
+t[0]=777
+will throw error as it is immutable
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SET:
+----
+order is not important
+duplicates are not allowed
+
+index and  slicing are not allowed
+
+we can add values
+s={}
+it is defined as dict 
+
+s=set()
+s.add(10)
+s
+10
+SET is mutable+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+frozenset:(fixed)
+----------
+don't want order
+don't want duplicates
+don't want mutable also then we go for
+ FROZENSET
+ 
+ s={10,20,22,23}
+ fs=frozenset(s)
+ >>> s={10,12,23,45}
+>>> fs=frozenset(s)
+>>> s
+{10, 12, 45, 23}
+>>> fs
+frozenset({10, 12, 45, 23})
+ 
+ 
+
+frozenset  is immutable
+
+List is mutable
+tuple is immuatble
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+dict:
+-----
+d={101:"raj",201:"durga"}
+dict is mutable	
+				duplicates keys are not alowed but values can be duplicated
+				
+				
+				
+				>>> s.add(10)
+>>> s
+{10}
+>>> s={10,12,23,45}
+>>> fs=frozenset(s)
+>>> s
+{10, 12, 45, 23}
+>>> fs
+frozenset({10, 12, 45, 23})
+>>> 
+>>> d={101:"druga"}
+>>> d[102]='raju'
+>>> d[103]='raju'
+>>> d
+{101: 'druga', 102: 'raju', 103: 'raju'}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+None data type:
+--------------
+
+
+def f1():
+   pass
+   
+   if amount>1000:
+   do some action
+   else:
+    pass
+
+def f1():
+
+None
+
+
+Escape characters:
+------------------
+\n  newline
+\t  horizontal
+\r  carriage return
+\b  one character back or back space
+\f  form feed
+\'  single
+\"  double
+\\ back  slash
+\v  vertical tab
+
+
+
+
+>>> s="durga\software"
+>>> s
+'durga\\software'
+>>>
+
+>>> s="durga\software"
+>>> s
+'durga\\software'
+>>> print(s)
+durga\software
+>>> s="durga\nsoftware"
+>>> print(s)
+durga
+software
+>>> s="durg\tsoftware"
+>>> print(s)
+durg    software
+
+
+
+
+s1="python by "durga sir" is good"  -- it is invalid
+s2="python by \"durga sir\" is good"  -- is valid
+s3='''python by "durga sir" is good'''
+s4='python by "durga sir" is good'
+s5="python by 'durga sir' is good"
+s6='''python by 'durga sir' is good and his "material" also good'''---- this is the best way for representing data
+s7="""python by 'durga sir' is good and his "material" also good"""
+
+s8='python by \'durga sir\' is good and his \"material\ also good'
+
+
+Constants: the value that never change
+----------
+final int x=10 --- in java
+
+MAX_VALUE=10
+
+
+BUT In python we don't have constant 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																				

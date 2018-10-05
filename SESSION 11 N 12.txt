@@ -1,0 +1,555 @@
+																				--------------------
+																				    SESSION - 10 
+																				--------------------
+																				
+1)Arithmetic operator:
+----------------------
++,-,*,/,%
+
+/--->flaoting point  arithmetic																			
+//----->floor division can work for the both integral and floating point arithmetic
+**-->power operator/exponential operator
+a**b-->
+2**3-->
+
+
+
++ OPERATOR:
+-----------
+10+20---->30
+'durga'+'soft' --->durgasoft
+
++ can be used  for    ---1)Arithmetic addition operator
+						 2)String concatenation operator
+						 
+						 
+operator can be used for  mutiple purpose then it is called  operator overloading	
+
+'durga'+10        invalid
+'durga'+10.5      invalid
+'durga'+True	  invalid
+
+>>> 'dutga'+10
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: must be str, not int
+
+>>> 'dutga'+'soft'
+'dutgasoft'
+----------------------------------------------------------------------------
+* OPERATOR:
+-----------	 
+
+10*20===>200
+
+'DUTGA'*2==>>>> 'dutga'*2
+'dutgadutga'
+
+IT ACCEPTS AS the repetition operator
+>>> 2*'dutga'
+'dutgadutga'
+
+it is also valid because
+when ever we use the * operator one argument must be string and other must be int 
+
+
+
+>>> 'soift'*'dutga'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can't multiply sequence by non-int of type 'str'
+>>> 2.0*'dutga'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can't multiply sequence by non-int of type 'float'
+
+>>> 'durga'*True
+'durga'    it got valid as because of the True=1 and 1 mulitplying with the string we got as 'durga'
+>>> 'durga'*False
+'' ----------it is because False=0 then multiplying with the string we got empty string ''
+>>> 'durga'*True*2
+>>> 'durga'*True*2  ---here it takes friom right to left  2*1(True)=2*durga -->'durgadurga'
+'durgadurga'
+
+>>> 2*True*'durga'
+'durgadurga'
+>>> 2*False*'durga'  //durga * zero number of times then it is going to be empty string only
+''
+>>> 2.0*False*'durga'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can't multiply sequence by non-int of type 'float'
+
+>>> 'durga'*True*False
+''
+
+
+
++ ---> it can be applicable for string type ,if we are concatenating then the 2 agruments must be  strings only
+*----->
+it can be applicable for the string as the repetition operator as one argument must be string other must be int or bool.
+
+10/0
+10.0/0
+10%0
+10.0%0    
+
+all the four or any numbers x/0 the result will be also zero.
+>>> 10/0
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ZeroDivisionError: division by zero
+>>> 10.0/0
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ZeroDivisionError: float division by zero
+>>> 10%0
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ZeroDivisionError: integer division or modulo by zero
+>>> 10.0%0
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ZeroDivisionError: float modulo
+>>> 10.0//0
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ZeroDivisionError: float divmod()
+
+
+RELATIONAL OPERATORS:
+---------------------
+>,>=,<,<= 
+
+This are relational operators
+
+>>> print(10>20)
+False
+>>> print(10>=20)
+False
+>>> print(10<20)
+True
+>>> print(10<=20)
+True
+
+
+increment and decrement operator does not applicable in Python
+
+numbers
+string
+'durga'<='durga'
+
+True
+>>> print('durga'>'ravi')
+False
+
+>>> print('durga'<'davi')
+False
+>>> print('ramya'<'ravi')
+True    m < v
+ >>>
+ >>> print('durga'<='durg')
+False
+ >>> print('durga'>='durg')
+True            97      0(zero)
+
+a unicode value is 97 and A unicode value is  65
+
+True  internally as 1
+
+False internally as 0
+
+>>> print(True<False)
+False
+>>> print(True>False)ss
+True
+>>> print(True>=False)
+True
+>>> print(True>=False)
+True
+>>> print(True<=False)
+False
+
+
+>>> print('durga'>='True')
+True
+>>> print('True'>='True')
+True
+>>> print('True'>='durg')
+False
+>>> print(True>='durg')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: '>=' not supported between instances of 'bool' and 'str'
+
+
+a=10
+b=20
+if a>b:
+   print('a is grater than b')
+else:
+   print('b is greter than a')
+   
+   
+   >>> a=10
+>>> b=20
+>>> if a>b:
+...    print('a is grater than b')
+... else:
+...    print('b is greter than a')
+... 
+b is greter than a
+
+a=int(input('Enter a value:'))
+b=int(input('enter b value:'))
+if a>b:
+   print('a is grater than b')
+else:
+   print('b is greter than a')
+   
+   
+   
+10<20 -->
+10<20<30-->
+>>> 10<20
+True
+>>> 10<20<30
+True
+>>>
+
+chaining of relational operators.
+If all comparisions returns True then only result is True
+>>> print(10<20<30)
+True
+>>> print(10<20<30<40)
+True
+>>> print(10<20<30<40>50)
+False
+>>> if any one comparision is false then the chain will becomes false
+
+
+
+EQUALITY operator:
+------------------
+== and !=
+
+
+we can use any type including incompatiable type also
+
+>>> True=='durga'
+False
+>>> True!='durga'
+True
+>>> print(10==20)
+False
+>>> print(10!=20)
+True
+>>> print(10==True)
+False
+>>> print(10!=True)
+True
+>>> print(10==10.0)
+True
+>>> print(10=='10')
+False
+>>>print(10=='durga')
+>>>False
+
+>>> print(65=='a')
+False
+>>> print(65=='A')
+False
+>>> print(10==20==30==40)
+False
+>>> print(10==10==10==10)
+True
+
+
+Logical operators:
+------------------
+and , or , not
+
+
+Boolean type:
+-------------
+and ---- If both arguments are True then only result iS True
+or  ----  Atleast one argument is True then result is True
+not ---- Completement 
+
+>>> print(True and  False)
+False
+>>> print(True or  False)
+True
+>>> print(not True)
+False
+
+
+For non boolean type:
+---------------------
+
+0 means False
+non zero means True
+
+empty string is always a boolean
+
+X and Y:
+--------
+If x evalutes to False then result is always x  otherwise x evalutes to true then result always Y
+
+10 and 20-->20
+0 and 20--->0
+
+
+'' and 20  --->''
+>>> print('' and 20)
+>>> <empty string>
+>>> print(10 and 20)
+20
+>>> print(0 and 20)
+0
+
+OR operator:
+------------
+
+X or Y
+------
+if x is evalutes true then result is x otherwise result is Y.
+
+>>> print(10 or 20)
+10
+>>> print(0 or 20)
+20
+
+10 or 20 -->10
+0 or 20-->20
+
+
+not operator:
+-------------
+ if x evalutes to False  then result is true
+                  true                false
+				  
+>>> print(not 20)
+False
+>>> print(not 0)
+True
+
+
+>>> print(not 'durga')
+False
+>>> print(not ')
+  File "<stdin>", line 1
+    print(not ')
+               ^
+SyntaxError: EOL while scanning string literal
+>>> print(not '')
+True
+																				-----------------
+																				   SESSION - 12
+																				-----------------
+
+
+>>> 'durga' and '' and 'ram'
+''
+
+x  and y
+if x evalutes to false then result is x otherwise result is y.
+
+>>> '' and 'ram'
+''
+>>> 'durga' and ''
+''
+>>>
+
+
+authentication:
+--------------
+
+user name and password
+durga and durga123
+
+
+>>> username=input('Enter user name:')
+Enter user name:durga
+>>> passwd=input('Enter password:')
+Enter password:durgasoft
+>>> if username=='durga' and passwd=='durgasoft':
+...    print("valid user and will get all privileages")
+... else :
+...    print("please check username or passwd")
+... 
+valid user and will get all privileages
+
+
+
+Bitwise operators:
+------------------
+& and
+| or
+^ xor
+~ complement
+<< left shift
+>>  right shift
+
+
+4   1 0 0
+5   1 0 1
+    1 0 0
+	
+	
+if both bits are one then it is one 
+****These bitwise operator is applicable for int and bool
+
+
+>>> print(4&5)
+4
+>>> print(10.5&5)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for &: 'float' and 'int'
+>>> print(True&False)
+False
+
+& ----> if both bits are 1 then only result is 1 otherwise result is 0(zero)
+| -----> if atleast 1 bit is 1 then result is 1 otherwise result is 0(zero)
+^ -----> if both bits are different then result 1 otherwise result is 0  
+
+>>> print(4&5)
+4
+>>> print(4|5)
+5
+>>> print(4^5)
+1
+
+
+
+Bitwise complement operator(~):
+------------------------------
+PRINT(~5)
+
+>>> print(~5)
+-6
+
+
+explanation of ~5
+
+0 means +ve
+1 means -ve
+ 
+5 is +ve number so we have 32 bit form  as 0000000000.........0101
+           first bit is always sign bit  + 31 bits are  reserved for the represnetation of value
+		   
+		   +ve number will be represneted in the memory
+		   -ve number will be represented in 2's complementary form
+		   
+		   
+		 5 in 31====>0000000000........0101
+		 ~5  =====>111111111111.........1010
+		  here( the most significant bit is 1) i.e negative number 
+
+
+~5 is  =====>	00000000000....0101
+complemted==>	11111111111....1010
+1's complemnt>	00000000000....0101
+2's comlement>                    1
+				--------------------
+				00000000000....0110     
+			    --------------------
+				
+				110 is 6 in binary form 4 2 1
+				                        1 1 0  ----->6 as we have -ve significant value it is -6
+										
+										
+										
+>>> ~True
+-2																										
+
+
+SHIFT operators:
+----------------
+1.Left shift:
+-------------
+<<
+
+10<<2 shift 2 bits to the left hand side
+
+000000000000000......01010
+ 2 cells shift 
+ we get
+  00000000000000......01010-- 
+  last 2 zero's are filled as becasuse of the 2 cells shifted to right side 
+  i.e
+  
+  00000000000000......0101000  
+  
+  last 101000 as 2^5 to 2^0
+  
+  1           0             1     0     0        0
+ 2^5 is 32   2^4 is 0     2^3=8   0		0		 0
+
+
+
+>>> print(10<<2)
+40
+
+ in left shift vacant cells should be fill with 0(zero's)
+ 
+ 
+>>> print(10>>2)
+2 
+In Right shift operators the vacant cells should be fill with sign bit i.e  ... if it is positive number fill with 0 -ve number fill with 1
+10>>2
+  00000000-----------01010
+                        --
+						
+  000000------------010--
+ i.e 2  
+ 
+ 
+ &,|,^,~,<<,>>
+ 
+ applicable for the boolean type also
+ 
+ print(True&True)
+ 
+ 
+ >>> print(True&False)
+False
+>>> print(True|False)
+True
+>>> print(True^False)
+True
+>>> print(~True)
+-2
+>>> print(True<<2)           000000-------01
+                             0000000------0100
+4
+
+
+>>> print(True>>2)     000000000 -------01
+                         000000000000-----
+0
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+~5
+
+
+
+>>> print(~-5)
+4
+
+
+how to represnt -5: 1     
+   
+-5:1111111......1011
+~5:0000000......0100
+                 ---
+
+
+5 ---> 0000000101
+ 1's>  1111111010 
+  2's>          1
+	-----------------
+      111....1011
+    -----------------	   
